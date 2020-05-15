@@ -23,12 +23,12 @@ public class NumberConverterTest {
         assertEquals("XV", numberConverter.convert("15"));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void givenStringMMMM_ThenThrowException() {
         assertEquals("Error: this cannot be converted!", numberConverter.convert("MMMM"));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void givenxDlTl50d_ThenThrowException() {
         assertEquals("Error: this cannot be converted!", numberConverter.convert("xDlTl50d"));
     }
