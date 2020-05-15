@@ -61,4 +61,22 @@ public class RomanConverterTest {
         RomanConverter romanConverter = new RomanConverter();
         assertEquals("CMXCIX", romanConverter.convertToRoman(999));
     }
+
+    @Test
+    public void given3000_ThenConvertToMMM() {
+        RomanConverter romanConverter = new RomanConverter();
+        assertEquals("MMM", romanConverter.convertToRoman(3000));
+    }
+
+    @Test
+    public void given3999_ThenConvertToMMMCMXCIX() {
+        RomanConverter romanConverter = new RomanConverter();
+        assertEquals("MMMCMXCIX", romanConverter.convertToRoman(3999));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void given4000_ThenWtf() {
+        RomanConverter romanConverter = new RomanConverter();
+        System.out.println(romanConverter.convertToRoman(4000));
+    }
 }

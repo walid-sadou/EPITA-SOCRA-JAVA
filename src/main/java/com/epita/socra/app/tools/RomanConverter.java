@@ -8,6 +8,10 @@ public class RomanConverter {
      * @return String corresponding to the roman number
      */
     public String convertToRoman(int number) {
+        if (number > 3999) {
+            throw new IllegalArgumentException();
+        }
+
         StringBuilder result = new StringBuilder();
 
         String[] roman = new String[]{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
