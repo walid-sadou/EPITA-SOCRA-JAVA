@@ -1,5 +1,8 @@
 package com.epita.socra.app;
 
+import com.epita.socra.app.tools.NumberConverter;
+import com.epita.socra.app.tools.RomanConverter;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -15,18 +18,24 @@ import com.epita.socra.app.tools.IOAdapter;
  * Unit test for simple App.
  */
 public class AppTest {
+    private NumberConverter numberConverter;
+
+    @Before
+    public void setUp() throws Exception {
+        numberConverter = new NumberConverter();
+    }
+
     /**
      * Rigorous Test.
      */
     @Test
     public void givenAMock_WhenRunningMain_ThenCheckOuputs() {
         IOAdapter mock = mock(IOAdapter.class);
-        when(mock.read()).thenReturn("TEST");
-        App app = new App(mock);
+        when(mock.read()).thenReturn("X");
+        App app = new App(mock, numberConverter);
         app.run();
 
-        verify(mock).write("Hello, what's your name ?");
-        verify(mock).write(argThat(message -> message.contains("TEST")));
-
+        verify(mock).write("Welcome to roman-arabic converter. Please enter your number (case unsensitive): ");
+        verify(mock).write(argThat(message -> message.contains("Translation: 10")));
     }
 }
