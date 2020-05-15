@@ -25,11 +25,11 @@ public class NumberConverterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void givenStringMMMM_ThenThrowException() {
-        numberConverter.convert("MMMM");
+        assertEquals("Error: this cannot be converted!", numberConverter.convert("MMMM"));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void givenxDlTl50d_ThenThrowException() {
-        numberConverter.convert("xDlTl50d");
+        assertEquals("Error: this cannot be converted!", numberConverter.convert("xDlTl50d"));
     }
 }
