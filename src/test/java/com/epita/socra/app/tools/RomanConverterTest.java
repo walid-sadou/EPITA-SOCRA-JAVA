@@ -1,7 +1,6 @@
 package com.epita.socra.app.tools;
 
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class RomanConverterTest {
@@ -41,6 +40,7 @@ public class RomanConverterTest {
         RomanConverter romanConverter = new RomanConverter();
         assertEquals("M", romanConverter.convertToRoman(1000));
     }
+
     @Test
     public void given42_ThenConvertToXLII() {
         RomanConverter romanConverter = new RomanConverter();
