@@ -41,4 +41,24 @@ public class RomanConverterTest {
         RomanConverter romanConverter = new RomanConverter();
         assertEquals("M", romanConverter.convertToRoman(1000));
     }
+    @Test
+    public void given42_ThenConvertToXLII() {
+        RomanConverter romanConverter = new RomanConverter();
+        assertEquals("XLII", romanConverter.convertToRoman(42));
+    }
+    @Test
+    public void given83_ThenConvertToLXXXIII() {
+        RomanConverter romanConverter = new RomanConverter();
+        assertEquals("LXXXIII", romanConverter.convertToRoman(83));
+    }
+    @Test
+    public void given1903_ThenConvertToMCMIII() {
+        RomanConverter romanConverter = new RomanConverter();
+        assertEquals("MCMIII", romanConverter.convertToRoman(1903));
+    }
+    @Test
+    public void given999_ThenConvertToCMXCIX() {
+        RomanConverter romanConverter = new RomanConverter();
+        assertEquals("CMXCIX", romanConverter.convertToRoman(999));
+    }
 }
