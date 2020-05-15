@@ -7,18 +7,20 @@ import com.epita.socra.app.tools.*;
  */
 public final class App {
     private IOAdapter adapter;
+    private NumberConverter numberConverter;
 
     private App() {
-        this(new ConsoleAdapter());
+        this(new ConsoleAdapter(), new NumberConverter());
     }
 
-    public App(IOAdapter adapter) {
+    public App(IOAdapter adapter, NumberConverter numberConverter) {
         this.adapter = adapter;
+        this.numberConverter = numberConverter;
     }
 
     /**
      * Says hello to the world.
-     * 
+     *
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
@@ -27,8 +29,8 @@ public final class App {
     }
 
     public void run(){
-        adapter.write("Hello, what's your name ?");
-        String name = adapter.read();
-        adapter.write("Nice to meet you, " + name + " !");
+        adapter.write("Welcome to roman-arabic converter. Please enter your number (case unsensitive): ");
+        String number = adapter.read();
+        adapter.write("Translation: " + numberConverter.convert(number));
     }
 }

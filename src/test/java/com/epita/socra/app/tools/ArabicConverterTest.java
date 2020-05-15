@@ -12,6 +12,12 @@ public class ArabicConverterTest {
     public void setUp() throws Exception {
         arabicConverter = new ArabicConverter();
     }
+
+    @Test
+    public void giveni_ThenConvertTo1() {
+        assertEquals(1, arabicConverter.convertToArabic("i"));
+    }
+
     @Test
     public void givenI_ThenConvertTo1() {
         assertEquals(1, arabicConverter.convertToArabic("I"));
@@ -66,11 +72,11 @@ public class ArabicConverterTest {
 
     @Test
     public void givenMMMCMXCIX_ThenConvertTo3999() {
-        assertEquals(3999, arabicConverter.convertToArabic("MMMCMXCIX");
+        assertEquals(3999, arabicConverter.convertToArabic("MMMCMXCIX"));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void given4000_ThenShouldThrowIllegalArgumentExecption() {
-        System.out.println(arabicConverter.convertToArabic(4000));
+        System.out.println(arabicConverter.convertToArabic("MMMM"));
     }
 }
